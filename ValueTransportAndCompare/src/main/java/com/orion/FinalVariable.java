@@ -13,9 +13,11 @@ public class FinalVariable {
         //i =11;//提示错误了，基本类型final的变量指向地址不能被改变
 
         final String a = "abc";
-        //a = "bcd";//提示错误了，基本类型final的变量指向地址不能被改变
+        //a = "bcd";//提示错误了，String类型final的变量指向地址不能被改变
 
         final int[] arr = {1, 2, 3, 45};
+        //int[] a1 = {123};
+        //arr = a1; 不能赋值给final
         arr[3] = 999;
         arr.toString(); //数组可以调用clone、toString等Object的方法，侧面反映它是对象了，指向地址不变，内容可变
         System.out.println(Arrays.toString(arr));
