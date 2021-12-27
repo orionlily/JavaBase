@@ -12,6 +12,7 @@
         <module>ValueTransportAndCompare</module>
         <module>ShallowAndDeepCopy</module>
         <module>Immutable</module>
+        <module>MultiThreading</module>
     </modules>
 
 
