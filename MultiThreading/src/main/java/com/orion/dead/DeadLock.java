@@ -39,5 +39,12 @@ public class DeadLock {
         t1.start();
         t2.start();
     }
-
+    /**
+     * 运行结果：
+     1642226179070	|	11	|	Thread-0	|	handle A begin
+     1642226179070	|	12	|	Thread-1	|	handle B begin
+     1642226180073	|	12	|	Thread-1	|	handle B end ,handle A begin
+     1642226180073	|	11	|	Thread-0	|	handle A end ,handle B begin
+     *
+     */
 }
