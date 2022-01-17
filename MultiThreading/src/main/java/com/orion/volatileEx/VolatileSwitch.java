@@ -14,6 +14,7 @@ public class VolatileSwitch {
     public static void main(String[] args) {
         Thread t1 = new Thread(() -> {
             while (turner) {
+                //里面不能有System.out.println，因为其源码有synchronized关键字，这样就刷新主存数据了
             }
             System.out.println("switch is off!");
         });
