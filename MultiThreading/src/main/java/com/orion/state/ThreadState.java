@@ -13,6 +13,10 @@ import java.util.concurrent.TimeUnit;
  * BLOCKED、阻塞
  * TERMINAL、终止
  *
+ * 通过以上实验，NEW和TERMINATED对于中断操作几乎是屏蔽的，RUNNABLE和BLOCKED类似，
+ * 对于中断操作只是设置中断标志位并没有强制终止线程，对于线程的终止权利依然在程序手中。
+ * WAITING/TIMED_WAITING状态下的线程对于中断操作是敏感的，他们会抛出异常并清空中断标志位。
+ *
  * @author Administrator
  */
 public class ThreadState {
