@@ -5,7 +5,7 @@ import com.orion.SmallTool;
 import java.util.concurrent.locks.LockSupport;
 
 /**
- * 测试lockSupport的状态、使用unpark和interrupt之后的状态
+ * 测试lockSupport的状态、使用unpark或interrupt进行唤醒或打断，让程序继续运行下去
  *
  * 可以知道lockSupport的park之后，线程是处于waiting状态的
  *
@@ -19,10 +19,10 @@ public class LockSupportState {
 
         e.start();
         SmallTool.sleepMillis(20);
-        SmallTool.printTimeAndThread("让e被park住，查看状态，e：" + e.getState());
+        SmallTool.printTimeAndThread("让e被park住，查看状态，e：" + e.getState());//WAITING
         LockSupport.unpark(e);
         SmallTool.sleepMillis(20);
-        SmallTool.printTimeAndThread("之后main线程使用unpark唤醒它，查看状态，e：" + e.getState());
+        SmallTool.printTimeAndThread("之后main线程使用unpark唤醒它，查看状态，e：" + e.getState());//TERMINATED
 
         SmallTool.sleepMillis(20);
         System.out.println("============================测试LockSupport是WAITING，以及打断============================");
@@ -30,10 +30,10 @@ public class LockSupportState {
         LockSupportPark f = new LockSupportPark("f");
         f.start();
         SmallTool.sleepMillis(20);
-        SmallTool.printTimeAndThread("让f被park住，查看状态，f：" + f.getState());
+        SmallTool.printTimeAndThread("让f被park住，查看状态，f：" + f.getState());//WAITING
         f.interrupt();
         SmallTool.sleepMillis(20);
-        SmallTool.printTimeAndThread("之后main线程使用interrupt打断它，查看状态，f：" + f.getState());
+        SmallTool.printTimeAndThread("之后main线程使用interrupt打断它，查看状态，f：" + f.getState());//TERMINATED
     }
     /**
      * 运行结果：

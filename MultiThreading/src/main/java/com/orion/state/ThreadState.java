@@ -77,7 +77,7 @@ public class ThreadState {
      1642177810925	|	1	|	main	|	待c启动成功之后，查看状态，b=TIMED_WAITING , c=BLOCKED
      1642177810925	|	1	|	main	|	c正在BLOCKED，尝试打断它
      1642177810925	|	1	|	main	|	在c被打断后，查看打断标志：true，状态：BLOCKED
-     1642177810925	|	1	|	main	|	c响应中断后不会再执行run()方法D的睡5s，立马往下执行异常代码
+     1642177810925	|	1	|	main	|	c响应中断后不会再执行run()方法的睡5s，立马往下执行异常代码
      1642177815886	|	12	|	b	|	完成业务了，状态是：RUNNABLE
      1642177815886	|	13	|	c	|	在-- block --被打断并清除中断标志，标志：false,状态是：RUNNABLE
      1642177815886	|	13	|	c	|	完成业务了，状态是：RUNNABLE
