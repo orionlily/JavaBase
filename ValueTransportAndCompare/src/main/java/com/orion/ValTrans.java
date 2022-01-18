@@ -52,27 +52,27 @@ public class ValTrans {
 
         valTrans.changeSimple(a);
         //基本类型保存在栈中，方法中的参数和传入的参数都是在栈中并保存为555，方法结束方法的参数就被干掉，所以改变不了值，还是原来定义的值
-        System.out.println(a + "--- 152");
+        System.out.println(a + "--- 152");//555--- 152
 
         //方法的变量在栈中定义了，方法结束它就被干掉，进来的时候传参和方法参都指向同一个对象，后台方法参改变了指向，原来的没改变，所以还是原来的值
         valTrans.changeString(s);
-        System.out.println(s + "--- change string");
+        System.out.println(s + "--- change string"); //orion--- change string
 
         //同上原理
         valTrans.changeStringNew(v);
-        System.out.println(v + "--- change string new");
+        System.out.println(v + "--- change string new");//lily--- change string new
 
         //传参和方法参指向同一个，方法参改变了某个属性，所以原来的也改变了
         valTrans.changeDate(d);
-        System.out.println(d + "--- 30");
+        System.out.println(d + "--- 30");//Sun Jan 30 00:43:49 CST 2022--- 30
 
         //原来指向一致，后面方法参改变了指向，原来的没变
         valTrans.changeDateNew(k);
-        System.out.println(k + "--- 2022-9-9");
+        System.out.println(k + "--- 2022-9-9");//Wed Jan 19 00:43:49 CST 2022--- 2022-9-9
 
         //改变了某个属性，数组就是对象，故变化了
         valTrans.changeAry(ary);
-        System.out.println(Arrays.toString(ary) + "--- ary[0] 9");
+        System.out.println(Arrays.toString(ary) + "--- ary[0] 9");//[9, 2, 3]--- ary[0] 9
     }
 
 }
