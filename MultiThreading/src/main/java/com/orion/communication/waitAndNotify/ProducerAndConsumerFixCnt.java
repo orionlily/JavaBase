@@ -121,7 +121,7 @@ public class ProducerAndConsumerFixCnt {
 
         public void decr() {
             synchronized (lock) {
-                while (!first) {
+                while (true) {
                     if (no.getCount() == 0) {
                         SmallTool.printTimeAndThread("已消费完 " + MAX_No + " 个，暂停消费");
                         lock.notify();

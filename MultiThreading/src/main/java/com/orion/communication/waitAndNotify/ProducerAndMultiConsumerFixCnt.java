@@ -16,8 +16,6 @@ public class ProducerAndMultiConsumerFixCnt {
 
     private static final Object lock = new Object();
 
-    private static boolean first = true;
-
     public static void main(String[] args) {
         Product product = new Product();
         Producer p = new Producer("producer", product);
@@ -99,7 +97,6 @@ public class ProducerAndMultiConsumerFixCnt {
                     } else {
                         no.increaseProduct();
                         SmallTool.printTimeAndThread("正在生产产品，No ：" +  no.getCount());
-                        first = false;
                     }
                 }
             }
@@ -126,7 +123,7 @@ public class ProducerAndMultiConsumerFixCnt {
 
         public void decr() {
             synchronized (lock) {
-                while (!first) {
+                while (true) {
                     if (no.getCount() == 0) {
                         SmallTool.printTimeAndThread("已消费完 " + MAX_No + " 个，暂停消费");
                         lock.notifyAll();
