@@ -3,6 +3,8 @@ package com.orion.base;
 import com.orion.SmallTool;
 
 /**
+ * wait(long)带有 long 类型参数的 wait()等待,如果在参数指定的时间内没有被唤醒,超时后会自动唤醒
+ *
  * @author Administrator
  * @date 2022/1/19
  */
