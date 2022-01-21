@@ -13,8 +13,6 @@ public class ProducerAndConsumerFixCnt {
 
     private static final Object lock = new Object();
 
-    private static boolean first = true;
-
     public static void main(String[] args) {
         Product product = new Product();
         Producer p = new Producer("producer", product);
@@ -94,7 +92,6 @@ public class ProducerAndConsumerFixCnt {
                     } else {
                         no.increaseProduct();
                         SmallTool.printTimeAndThread("正在生产产品，No ：" +  no.getCount());
-                        first = false;
                     }
                 }
             }
