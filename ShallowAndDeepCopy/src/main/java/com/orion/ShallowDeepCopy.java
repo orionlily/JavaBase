@@ -58,10 +58,10 @@ public class ShallowDeepCopy {
          ss2: com.orion.ShallowStudent@1b6d3586,detail: ShallowStudent{name='lily', cmeScores=[22, 60, 70], age=12, height=155},ss2 hashcode: 460141958
          *
          * 结论：ShallowStudent实现了cloneable接口，重写了clone方法，创建1个对象，另一个clone，它们在栈中是分配两个地址的，
-         * 都是指向同一个堆地址，height是int基本类型，其他都是对象类型，height直接比较value没问题，而改变了ss2的name为什么ss1没有改变呢，
+         * 都是指向同一个堆地址，height是int基本类型，其他都是对象类型，height直接比较value没问题，而改变了ss1的name为什么ss2没有改变呢，
          * 因为string是不可变类，它会再生一个string，而ss2改变了指向，所以ss1不变，ss2变，age也是integer不可变类也是同样道理,
          * 还有ss1和ss2的name、age用==来比较的话，结果是true，证明它们指向的地址是一样的，
-         * 而数组对象cmeScores不是不可变对象，ss1和ss2指向同一个地址，改变了它，两个都是会发生变化的。
+         * 而数组对象cmeScores是可变对象，ss1和ss2指向同一个地址，改变了它，两个都是会发生变化的。
          *
          * 所以，我们来验证深浅拷贝，需要一个可变对象，用不可变对象是验证不出来的。
          */
