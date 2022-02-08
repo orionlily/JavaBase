@@ -44,15 +44,15 @@ public class FutureHandleException {
 }
 /**
  * 运行结果：
- *
- 1644319376454	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376456	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376456	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376458	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
- 1644319376458	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
-*/
+ * <p>
+ * 1644319376454	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376456	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376456	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376457	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376458	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ * 1644319376458	|	1	|	main	|	线程池执行异常：java.lang.ArithmeticException: / by zero
+ */
