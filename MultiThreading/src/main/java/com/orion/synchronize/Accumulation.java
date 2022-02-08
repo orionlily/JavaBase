@@ -38,3 +38,28 @@ public class Accumulation {
         System.out.println("result count : " + count);
     }
 }
+/**
+ * 运行结果：mmm 和 haha 的位置没变，synchronize禁止重排序
+ Thread[t0,5,main]-- mmm
+ Thread[t0,5,main]-- haha
+ Thread[t1,5,main]-- mmm
+ Thread[t1,5,main]-- haha
+ Thread[t2,5,main]-- mmm
+ Thread[t2,5,main]-- haha
+ Thread[t3,5,main]-- mmm
+ Thread[t3,5,main]-- haha
+ Thread[t4,5,main]-- mmm
+ Thread[t4,5,main]-- haha
+ Thread[t5,5,main]-- mmm
+ Thread[t5,5,main]-- haha
+ Thread[t6,5,main]-- mmm
+ Thread[t6,5,main]-- haha
+ Thread[t7,5,main]-- mmm
+ Thread[t7,5,main]-- haha
+ Thread[t8,5,main]-- mmm
+ Thread[t8,5,main]-- haha
+ Thread[t9,5,main]-- mmm
+ Thread[t9,5,main]-- haha
+ result count : 10000000
+ *
+ */
