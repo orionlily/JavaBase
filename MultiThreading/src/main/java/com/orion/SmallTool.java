@@ -1,6 +1,8 @@
 package com.orion;
 
 import java.util.StringJoiner;
+import java.util.concurrent.ThreadFactory;
+import java.util.concurrent.atomic.AtomicInteger;
 
 /**
  * 小工具
@@ -24,6 +26,32 @@ public class SmallTool {
                 .add(tag)
                 .toString();
         System.out.println(result);
+    }
+
+    public static ThreadFactory getCustomThreadFactory(){
+        return new CustomThreadFactory();
+    }
+
+    static class CustomThreadFactory implements ThreadFactory {
+        private final ThreadGroup group;
+        private final AtomicInteger threadNumber = new AtomicInteger(1);
+        private final String namePrefix;
+
+        CustomThreadFactory() {
+            SecurityManager s = System.getSecurityManager();
+            group = (s != null) ? s.getThreadGroup() :
+                    Thread.currentThread().getThreadGroup();
+            namePrefix = "pool-llc-thread-";
+        }
+
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread t = new Thread(group, r,
+                    namePrefix + threadNumber.getAndIncrement());
+            t.setDaemon(false);
+            t.setPriority(Thread.NORM_PRIORITY);
+            return t;
+        }
     }
 
 }
