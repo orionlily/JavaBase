@@ -13,6 +13,7 @@
         <module>ShallowAndDeepCopy</module>
         <module>Immutable</module>
         <module>MultiThreading</module>
+        <module>InheritInitOrderRelation</module>
     </modules>
 
 
