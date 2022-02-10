@@ -56,24 +56,27 @@ public class ImmutableClass {
         System.out.println("arg imAry : " + Arrays.toString(imAry) + " , imStrAry : " + Arrays.toString(imStrAry));
         System.out.println("immutableClass imAry :" + Arrays.toString(immutableClass.getAry()) + " , imStrAry : "
                 + Arrays.toString(immutableClass.getStrAry()));
+
         imAry[2] = 111;
         imStrAry[2] = "dd";
         System.out.println("arg imAry and imStrAry change index 2 , arg imAry : " + Arrays.toString(imAry) + " , imStrAry : " + Arrays.toString(imStrAry));
         System.out.println("after ary imAry and imStrAry change , immutableClass imAry :" + Arrays.toString(immutableClass.getAry()) + " , imStrAry : "
                 + Arrays.toString(immutableClass.getStrAry()));
+
         immutableClass.getAry()[2] = 222;
         String[] tempStrAry = immutableClass.getStrAry();
-        System.out.println(tempStrAry == immutableClass.strAry);
+        System.out.println("immutableClass.getStrAry() == immutableClass.strAry ? " + (tempStrAry == immutableClass.strAry));
         System.out.println("get immutableClass imAry and imStrAry and change , immutableClass imAry :" + Arrays.toString(immutableClass.getAry()) + " , imStrAry : "
                 + Arrays.toString(immutableClass.getStrAry()));
 
         /**
          * 运行结果：
-           arg imAry : [77, 88, 99] , imStrAry : [aa, bb, cc]
-           immutableClass imAry :[77, 88, 99] , imStrAry : [aa, bb, cc]
-           arg imAry and imStrAry change index 2 , arg imAry : [77, 88, 111] , imStrAry : [aa, bb, dd]
-           after ary imAry and imStrAry change , immutableClass imAry :[77, 88, 99] , imStrAry : [aa, bb, cc]
-           get immutableClass imAry and imStrAry and change , immutableClass imAry :[77, 88, 222] , imStrAry : [aa, bb, cc]
+         arg imAry : [77, 88, 99] , imStrAry : [aa, bb, cc]
+         immutableClass imAry :[77, 88, 99] , imStrAry : [aa, bb, cc]
+         arg imAry and imStrAry change index 2 , arg imAry : [77, 88, 111] , imStrAry : [aa, bb, dd]
+         after ary imAry and imStrAry change , immutableClass imAry :[77, 88, 99] , imStrAry : [aa, bb, cc]
+         immutableClass.getStrAry() == immutableClass.strAry ? false
+         get immutableClass imAry and imStrAry and change , immutableClass imAry :[77, 88, 222] , imStrAry : [aa, bb, cc]
          *
          * 以上可以得出，因为immutableClass初始化调用构造函数的时候，用的是拷贝技术，而不是直接赋值的方式，所以传参和内部属性时分离的，
          * 这相当于是深拷贝了，都是独立的一份，传入的数组在外边改变了，并不影响immutableClass类的属性，但在get方法中，分别对于2个参数，

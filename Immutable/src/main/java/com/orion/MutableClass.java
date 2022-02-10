@@ -53,10 +53,10 @@ public class MutableClass {
 
         /**
          * 运行结果：
-           arg ary init : [1, 2, 3]
-           mutableClass ary :[1, 2, 3]
-           arg ary change index 2 : [1, 2, 9]
-           after ary change , mutableClass ary :[1, 2, 9]
+         arg ary init : [1, 2, 3]
+         mutableClass ary :[1, 2, 3]
+         arg ary change index 2 : [1, 2, 9]
+         after ary change , mutableClass ary :[1, 2, 9]
          */
     }
 
