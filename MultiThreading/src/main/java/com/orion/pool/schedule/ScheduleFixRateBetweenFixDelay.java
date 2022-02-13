@@ -63,35 +63,15 @@ public class ScheduleFixRateBetweenFixDelay {
             e.printStackTrace();
         }
         /**
-         * 运行结果： 可见延迟0秒执行,之后每隔1秒执行一次
+         * 运行结果： 可见延迟0秒执行,之后每次任务会等待任务完成后(用时2s)再delay(1s)才会进行下一次的任务
          *
-         1644422818152	|	1	|	main	|	马上进行scheduleWithFixedDelay的task
-         1644422820160	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422821163	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422822179	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422823194	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422824207	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
-         1644422825221	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422826221	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422827225	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422828241	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422829251	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422830261	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422831271	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422832286	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422833294	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422834303	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422835316	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422836328	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422837337	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
-         1644422838351	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422839361	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422840374	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422841387	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
-         1644422842401	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
-         1644422843408	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422844414	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
-         1644422845428	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
+         1644730884860	|	1	|	main	|	马上进行scheduleWithFixedDelay的task
+         1644730884860	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
+         1644730887864	|	11	|	pool-llc-thread-1	|	schedule with fixed delay runnable task
+         1644730890869	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
+         1644730893903	|	12	|	pool-llc-thread-2	|	schedule with fixed delay runnable task
+         1644730896908	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
+         1644730899909	|	13	|	pool-llc-thread-3	|	schedule with fixed delay runnable task
          */
     }
 }

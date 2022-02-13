@@ -16,7 +16,7 @@ public class ScheduledThreadPoolExecutorTs {
                 , (r, executor) -> SmallTool.printTimeAndThread("放弃任务：" + r + "，所属线程池：" + executor));
 
         //单次执行
-        //delayExecOneTime(executorService);
+        delayExecOneTime(executorService);
 
         //单次执行callable
         //delayExecCallableOneTime(executorService);
@@ -34,19 +34,31 @@ public class ScheduledThreadPoolExecutorTs {
          * 当达到延时时间initialDelay后，任务开始执行。上一个任务执行结束后到下一次任务执行，
          * 中间延时时间间隔为delay。以这种方式，周期性执行任务
          */
-        scheduleWithFixedDelayExecManyTimes(executorService);
+        //scheduleWithFixedDelayExecManyTimes(executorService);
 
     }
 
     private static void delayExecOneTime(ScheduledExecutorService executorService) {
         SmallTool.printTimeAndThread("马上进行scheduled task");
-        Runnable runnable = () -> SmallTool.printTimeAndThread("runnable task");
+        Runnable runnable = () ->{
+
+            try {
+                TimeUnit.SECONDS.sleep(2);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+            SmallTool.printTimeAndThread("runnable task");
+        };
         executorService.schedule(runnable, 3, TimeUnit.SECONDS);
         /**
          * 运行结果： 可见延迟3秒执行
          *
          1644420209771	|	1	|	main	|	马上进行scheduled task
          1644420212784	|	11	|	pool-llc-thread-1	|	runnable task
+
+         加了sleep，一共5秒
+         1644730965169	|	1	|	main	|	马上进行scheduled task
+         1644730970189	|	11	|	pool-llc-thread-1	|	runnable task
          */
     }
 
