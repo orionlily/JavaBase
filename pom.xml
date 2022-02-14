@@ -15,6 +15,7 @@
         <module>MultiThreading</module>
         <module>InheritInitOrderRelation</module>
         <module>HashStruct</module>
+        <module>DynamicProxy</module>
     </modules>
 
 
