@@ -43,18 +43,19 @@ public class ThreadPoolTryCatchException {
                 SmallTool.printTimeAndThread("count=" + count);
 
                 if (count == 10) {
-                    System.out.println(1 / 0);
                     try {
+                        System.out.println(1 / 0);
                     } catch (Exception e) {
                         SmallTool.printTimeAndThread("Exception : " + e.getLocalizedMessage());
                     }
                 }
 
                 if (count == 20) {
-                    SmallTool.printTimeAndThread("count=" + count);
+                    SmallTool.printTimeAndThread("count=====" + count);
                     break;
                 }
             }
+            System.out.println("break");
         }
     }
 }
