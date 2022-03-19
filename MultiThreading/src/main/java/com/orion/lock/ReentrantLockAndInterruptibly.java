@@ -115,5 +115,11 @@ public class ReentrantLockAndInterruptibly {
      at com.orion.lock.ReentrantLockAndInterruptibly.lambda$main$0(ReentrantLockAndInterruptibly.java:27)
      at java.lang.Thread.run(Thread.java:748)
      1642232300178	|	11	|	t1	|	RUNNABLE ***** 释放锁
+
+
+     有这行：if (lock.isHeldByCurrentThread())
+     1647658956961	|	11	|	t1	|	RUNNABLE ***** 获得锁
+     1647658957084	|	12	|	t2	|	睡眠被打断 ************** null
+     1647658974268	|	11	|	t1	|	RUNNABLE ***** 释放锁
      */
 }
